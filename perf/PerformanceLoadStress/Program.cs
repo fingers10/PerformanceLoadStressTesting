@@ -1,17 +1,18 @@
-﻿using NBomber.CSharp;
+using NBomber.CSharp;
+using NBomber.Data;
+using NBomber.Data.CSharp;
 using NBomber.Http;
 using NBomber.Http.CSharp;
 
 using var httpClient = new HttpClient();
 
+IDataFeed<string> locations = DataFeed.Random(new[] { "India", "New York", "Paris" });
+
 var getScenario = Scenario.Create("get_weather_forecast", async context =>
 {
-    var request = Http.CreateRequest("GET", "https://localhost:7116/weatherforecast");
+    var location = locations.GetNextItem(context.ScenarioInfo);
+    var request = Http.CreateRequest("GET", $"https://localhost:7116/weatherforecast?location={location}");
     return await Http.Send(httpClient, request);
-
-    // var response = await httpClient.GetAsync("https://localhost:7116/weatherforecast");
-
-    // return response.IsSuccessStatusCode ? Response.Ok() : Response.Fail();
 })
 .WithoutWarmUp()
 .WithLoadSimulations(
