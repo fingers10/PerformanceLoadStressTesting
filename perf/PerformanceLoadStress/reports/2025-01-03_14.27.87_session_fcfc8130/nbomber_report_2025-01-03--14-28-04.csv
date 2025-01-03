@@ -1,0 +1,2 @@
+test_suite,test_name,scenario,duration,step_name,request_count,ok,failed,rps,min,mean,max,50_percent,75_percent,95_percent,99_percent,std_dev,data_transfer_min_kb,data_transfer_mean_kb,data_transfer_max_kb,data_transfer_all_mb
+nbomber_default_test_suite_name,nbomber_default_test_name,get_weather_forecast,00:00:30,global information,11600,11597,3,386.6,0.16,8465.85,23977.71,0.86,20856.83,23232.51,23576.58,10191.34,0.431,0.445,0.466,5.1

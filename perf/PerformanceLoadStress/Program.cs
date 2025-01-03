@@ -1,4 +1,4 @@
-using NBomber.CSharp;
+﻿using NBomber.CSharp;
 using NBomber.Data;
 using NBomber.Data.CSharp;
 using NBomber.Http;
@@ -16,7 +16,7 @@ var getScenario = Scenario.Create("get_weather_forecast", async context =>
 })
 .WithoutWarmUp()
 .WithLoadSimulations(
-    Simulation.RampingInject(rate: 100,
+    Simulation.RampingInject(rate: 800,
         interval: TimeSpan.FromSeconds(1),
         during: TimeSpan.FromSeconds(30))
 );
