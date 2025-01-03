@@ -2,9 +2,9 @@
 
 using var httpClient = new HttpClient();
 
-var listScenario = Scenario.Create("get_weather_forecast", async context =>
+var getScenario = Scenario.Create("get_weather_forecast", async context =>
 {
-    var response = await httpClient.GetAsync("https://localhost:5001/weatherforecast");
+    var response = await httpClient.GetAsync("https://localhost:7116/weatherforecast");
 
     return response.IsSuccessStatusCode ? Response.Ok() : Response.Fail();
 })
@@ -16,5 +16,5 @@ var listScenario = Scenario.Create("get_weather_forecast", async context =>
 );
 
 NBomberRunner
-    .RegisterScenarios(listScenario)
+    .RegisterScenarios(getScenario)
     .Run();
