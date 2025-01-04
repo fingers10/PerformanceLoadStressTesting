@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IdentityModel" Version="7.0.0" />
     <PackageReference Include="NBomber" Version="5.8.2" />
     <PackageReference Include="NBomber.Data" Version="5.0.0" />
     <PackageReference Include="NBomber.Http" Version="5.2.1" />

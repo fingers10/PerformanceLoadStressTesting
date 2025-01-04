@@ -1,4 +1,5 @@
-﻿using NBomber.CSharp;
+using IdentityModel.Client;
+using NBomber.CSharp;
 using NBomber.Data;
 using NBomber.Data.CSharp;
 using NBomber.Http;
