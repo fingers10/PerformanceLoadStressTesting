@@ -1,14 +1,15 @@
-using IdentityModel.Client;
+﻿using IdentityModel.Client;
 using NBomber.CSharp;
 using NBomber.Data;
 using NBomber.Data.CSharp;
 using NBomber.Http;
 using NBomber.Http.CSharp;
+using NBomber.Sinks.InfluxDB;
 
 using var httpClient = new HttpClient();
 var _globalJwt = string.Empty;
-
 IDataFeed<string> locations = DataFeed.Random(new[] { "India", "New York", "Paris" });
+InfluxDBSink _influxDbSink = new();
 
 var getScenario = Scenario.Create("get_weather_forecast", async context =>
 {
@@ -18,7 +19,7 @@ var getScenario = Scenario.Create("get_weather_forecast", async context =>
 })
 .WithoutWarmUp()
 .WithLoadSimulations(
-    Simulation.RampingInject(rate: 800,
+    Simulation.RampingInject(rate: 300,
         interval: TimeSpan.FromSeconds(1),
         during: TimeSpan.FromSeconds(30))
 );
@@ -43,7 +44,7 @@ var getWithAuthScenario = Scenario.Create("get_weather_forecast_with_auth", asyn
 })
 .WithoutWarmUp()
 .WithLoadSimulations(
-    Simulation.RampingInject(rate: 800,
+    Simulation.RampingInject(rate: 300,
         interval: TimeSpan.FromSeconds(1),
         during: TimeSpan.FromSeconds(30))
 );
@@ -51,4 +52,9 @@ var getWithAuthScenario = Scenario.Create("get_weather_forecast_with_auth", asyn
 NBomberRunner
     .RegisterScenarios(getScenario, getWithAuthScenario)
     .WithWorkerPlugins(new HttpMetricsPlugin())
+    .LoadInfraConfig("infra-config.json")
+    .WithReportingInterval(TimeSpan.FromSeconds(5))
+    .WithReportingSinks(_influxDbSink)
+    .WithTestSuite("ILoveDotNetPerformanceTest")
+    .WithTestName("Get_WeatherForecast_Requests")
     .Run();

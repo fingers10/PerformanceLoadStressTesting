@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -12,6 +12,13 @@
     <PackageReference Include="NBomber" Version="5.8.2" />
     <PackageReference Include="NBomber.Data" Version="5.0.0" />
     <PackageReference Include="NBomber.Http" Version="5.2.1" />
+    <PackageReference Include="NBomber.Sinks.InfluxDB" Version="5.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="infra-config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
