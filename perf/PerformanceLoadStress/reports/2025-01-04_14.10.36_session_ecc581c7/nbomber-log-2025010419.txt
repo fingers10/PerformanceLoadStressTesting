@@ -1,0 +1,19 @@
+2025-01-04 19:40:48.486 +05:30 [INF] [ThreadId:1] NBomber 5.8.2 started a new session: 2025-01-04_14.10.36_session_ecc581c7
+2025-01-04 19:40:48.547 +05:30 [INF] [ThreadId:1] NBomber started as single node
+2025-01-04 19:40:48.550 +05:30 [INF] [ThreadId:1] License validation....
+2025-01-04 19:40:48.550 +05:30 [WRN] [ThreadId:1] THIS VERSION IS FREE ONLY FOR PERSONAL USE. You can't use it for an organization.
+2025-01-04 19:40:48.580 +05:30 [INF] [ThreadId:1] Reports folder: /Users/abdulrahmanshabeekmohamed/Projects/Personal/PerformanceLoadStressTesting/perf/PerformanceLoadStress/bin/Debug/net9.0/reports/2025-01-04_14.10.36_session_ecc581c7
+2025-01-04 19:40:48.580 +05:30 [INF] [ThreadId:1] Plugin loaded: HttpMetricsPlugin
+2025-01-04 19:40:48.581 +05:30 [INF] [ThreadId:1] Reporting sink loaded: NBomber.Sinks.InfluxDB
+2025-01-04 19:40:48.581 +05:30 [INF] [ThreadId:1] Starting init...
+2025-01-04 19:40:48.586 +05:30 [INF] [ThreadId:1] Start init plugin: HttpMetricsPlugin
+2025-01-04 19:40:48.591 +05:30 [INF] [ThreadId:1] Start init reporting sink: NBomber.Sinks.InfluxDB
+2025-01-04 19:40:48.662 +05:30 [INF] [ThreadId:1] Target scenarios: get_weather_forecast, get_weather_forecast_with_auth
+2025-01-04 19:40:48.664 +05:30 [INF] [ThreadId:1] Start init scenario: get_weather_forecast_with_auth
+2025-01-04 19:40:50.252 +05:30 [INF] [ThreadId:5] Init finished
+2025-01-04 19:40:50.275 +05:30 [INF] [ThreadId:5] Starting bombing...
+2025-01-04 19:41:20.459 +05:30 [INF] [ThreadId:15] Waiting on scenarios completion...
+2025-01-04 19:41:24.463 +05:30 [INF] [ThreadId:15] Stopping scenarios...
+2025-01-04 19:41:24.466 +05:30 [INF] [ThreadId:15] Calculating final statistics...
+2025-01-04 19:41:24.782 +05:30 [INF] [ThreadId:18] Reports saved in folder: /Users/abdulrahmanshabeekmohamed/Projects/Personal/PerformanceLoadStressTesting/perf/PerformanceLoadStress/reports/2025-01-04_14.10.36_session_ecc581c7
+2025-01-04 19:41:24.782 +05:30 [WRN] [ThreadId:18] THIS VERSION IS FREE ONLY FOR PERSONAL USE. You can't use it for an organization.
