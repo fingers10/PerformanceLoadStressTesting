@@ -1,4 +1,8 @@
-﻿using IdentityModel.Client;
+﻿using System.Data;
+using IdentityModel.Client;
+using Microsoft.Extensions.Configuration;
+using NBomber.Contracts;
+using NBomber.Contracts.Stats;
 using NBomber.CSharp;
 using NBomber.Data;
 using NBomber.Data.CSharp;
@@ -52,9 +56,44 @@ var getWithAuthScenario = Scenario.Create("get_weather_forecast_with_auth", asyn
 NBomberRunner
     .RegisterScenarios(getScenario, getWithAuthScenario)
     .WithWorkerPlugins(new HttpMetricsPlugin())
+    // .WithWorkerPlugin(new ApdexScorePlugin())
     .LoadInfraConfig("infra-config.json")
     .WithReportingInterval(TimeSpan.FromSeconds(5))
     .WithReportingSinks(_influxDbSink)
     .WithTestSuite("ILoveDotNetPerformanceTest")
     .WithTestName("Get_WeatherForecast_Requests")
     .Run();
+
+public class ApdexScorePlugin : IWorkerPlugin
+{
+    public Task Init(IBaseContext context, IConfiguration infraConfig)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task Start(SessionStartInfo sessionInfo)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<DataSet> GetStats(NodeStats stats)
+    {
+        throw new NotImplementedException();
+    }
+
+    public string[] GetHints()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task Stop()
+    {
+        throw new NotImplementedException();
+    }
+
+    public string PluginName { get; }
+    
+    public void Dispose()
+    {
+    }
+}
